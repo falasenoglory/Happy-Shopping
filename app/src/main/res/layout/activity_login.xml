@@ -11,46 +11,22 @@
     tools:context="com.jfb.happyshopping.Login">
 
     <ImageView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imageView"
         android:src="@mipmap/logo2"
-        android:layout_marginBottom="314dp"
+        android:layout_marginBottom="141dp"
+        android:layout_above="@+id/login_button"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/login_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="127dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/edtUserName"
-        android:hint="Username"
-        android:textColorHint="@color/colorHintLogin"
-        android:background="@drawable/dotted"
-
-
-        android:padding="10dp"
-        android:gravity="center"
-        android:layout_marginBottom="218dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/imageView"
-        android:layout_alignStart="@+id/imageView"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/edtPassword"
-        android:hint="Password"
-        android:textColorHint="@color/colorHintLogin"
-        android:background="@drawable/dotted"
-
-        android:padding="10dp"
-        android:gravity="center"
-        android:layout_marginTop="47dp"
-        android:layout_alignTop="@+id/edtUserName"
-        android:layout_alignRight="@+id/edtUserName"
-        android:layout_alignEnd="@+id/edtUserName"
-        android:layout_alignLeft="@+id/edtUserName"
-        android:layout_alignStart="@+id/edtUserName" />
 </RelativeLayout>
