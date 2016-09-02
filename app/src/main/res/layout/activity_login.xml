@@ -15,18 +15,17 @@
         android:layout_height="wrap_content"
         android:id="@+id/imageView"
         android:src="@mipmap/logo2"
-        android:layout_marginBottom="141dp"
-        android:layout_above="@+id/login_button"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="61dp" />
 
     <com.facebook.login.widget.LoginButton
         android:id="@+id/login_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="127dp"
-        android:layout_alignParentBottom="true"
+        android:layout_alignBottom="@+id/imageView"
         android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
