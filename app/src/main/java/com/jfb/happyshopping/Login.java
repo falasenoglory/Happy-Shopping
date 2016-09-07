@@ -101,7 +101,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener  {
                             @Override
                             public void onSuccess(LoginResult loginResult) {
                                 setFacebookData(loginResult);
-                                Intent i = new Intent(Login.this,Login.class);
+                                Intent i = new Intent(Login.this,Category.class);
                                 i.putExtra("name",firstName+" "+ lastName);
                                 i.putExtra("email",email);
                                 i.putExtra("location",location);
