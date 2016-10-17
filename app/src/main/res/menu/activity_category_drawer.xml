@@ -4,16 +4,20 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_categories"
+            android:icon="@drawable/shoppingbasket"
+            android:title="My Shopping List" />
+        <item
+            android:id="@+id/nav_shoppinglist"
             android:icon="@drawable/differentsquares"
-            android:title="Categories" />
+            android:title="S-List Shared To Me" />
         <item
             android:id="@+id/nav_members"
             android:icon="@drawable/groupofpeople"
-            android:title="Members" />
+            android:title="Friends" />
         <item
-            android:id="@+id/nav_shoppinglist"
-            android:icon="@drawable/shoppingbasket"
-            android:title="Shopping List" />
+            android:id="@+id/contributors"
+            android:icon="@android:drawable/btn_plus"
+            android:title="Contributors" />
 
     </group>
 

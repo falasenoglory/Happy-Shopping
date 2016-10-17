@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/content_fragment"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,85 +9,10 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@mipmap/categorybg"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.jfb.happyshopping.Category"
+    tools:context="com.jfb.happyshopping.activites.MainPage"
     tools:showIn="@layout/app_bar_category">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="CATEGORIES"
-        android:id="@+id/textView2"
-        android:textSize="50sp"
-        android:layout_alignParentTop="true"
-        android:textColor="@color/secondary_text_default_material_light"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:gravity="center" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="FOOD"
-        android:id="@+id/txtFood"
-        android:textSize="40sp"
-        android:textColor="@color/secondary_text_default_material_light"
-        android:layout_marginTop="42dp"
-        android:gravity="center"
-        android:layout_below="@+id/textView2"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="DRINKS"
-        android:id="@+id/txtDrinks"
-        android:textSize="40sp"
-        android:textColor="@color/secondary_text_default_material_light"
-        android:gravity="center"
-        android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="DRY GOODS"
-        android:id="@+id/txtDryGoods"
-        android:textSize="40sp"
-        android:textColor="@color/secondary_text_default_material_light"
-        android:layout_marginTop="64dp"
-        android:layout_below="@+id/txtDrinks"
-        android:layout_alignLeft="@+id/txtDrinks"
-        android:layout_alignStart="@+id/txtDrinks"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:gravity="center" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="OTHERS"
-        android:id="@+id/txtOthers"
-        android:textSize="40sp"
-        android:textColor="@color/secondary_text_default_material_light"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:gravity="center"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
 </RelativeLayout>

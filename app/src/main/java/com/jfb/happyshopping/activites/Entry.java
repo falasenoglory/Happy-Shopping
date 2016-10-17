@@ -1,7 +1,9 @@
-package com.jfb.happyshopping;
+package com.jfb.happyshopping.activites;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.jfb.happyshopping.R;
 
 public class Entry extends AppCompatActivity {
 

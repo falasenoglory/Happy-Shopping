@@ -1,32 +1,24 @@
-package com.jfb.happyshopping.Models;
+package com.jfb.happyshopping.models;
 
-/**
- * Created by Shanyl Jimenez on 9/3/2016.
- */
-public class Item {
+import java.util.HashMap;
+import java.util.Map;
 
-    private String ItemID;
+public class Product {
+
     private String ItemName;
     private int Quantity;
-    private Boolean isBought;
+    private boolean isBought;
 
-    public Item() {
+    public Product() {
     }
 
-    public Item(String itemID, String itemName, int quantity, Boolean isBought) {
-        ItemID = itemID;
+    public Product(String itemName, int quantity, Boolean isBought) {
+
         ItemName = itemName;
         Quantity = quantity;
         this.isBought = isBought;
     }
 
-    public String getItemID() {
-        return ItemID;
-    }
-
-    public void setItemID(String itemID) {
-        ItemID = itemID;
-    }
 
     public String getItemName() {
         return ItemName;
@@ -50,5 +42,14 @@ public class Item {
 
     public void setBought(Boolean bought) {
         isBought = bought;
+    }
+
+    public Map<String, Object> toMap() {
+        HashMap<String, Object> result = new HashMap<>();
+        result.put("ItemName", ItemName);
+        result.put("Quantity", Quantity);
+        result.put("isBought", isBought);
+        return result;
+
     }
 }

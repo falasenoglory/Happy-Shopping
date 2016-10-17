@@ -14,37 +14,40 @@
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
 
-        <activity android:name=".Login" >
+        <activity android:name=".activites.ShoppingList"></activity>
+
+        <activity android:name=".activites.Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name="com.facebook.FacebookActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
-            android:name=".Category"
+            android:name=".activites.MainPage"
             android:label="@string/title_activity_category"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Entry">
+        <activity android:name=".activites.Entry" />
+        <!-- <activity -->
+        <!-- android:name=".ShoppingList" -->
+        <!-- android:label="@string/title_activity_shopping_list" -->
+        <!-- android:theme="@style/AppTheme.NoActionBar"></activity>&lt;!&ndash; ATTENTION: This was auto-generated to add Google Play services to your project for -->
+        <!-- App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. &ndash;&gt; -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
 
-        </activity>
-        <activity
-            android:name=".ShoppingList"
-            android:label="@string/title_activity_shopping_list"
-            android:theme="@style/AppTheme.NoActionBar" />
-
-        <service android:name=".MyFirebaseMessagingService">
+        <service android:name=".service.MyFirebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-        <service android:name=".MyFirebaseInstanceIDService">
+        <service android:name=".service.MyFirebaseInstanceIDService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>

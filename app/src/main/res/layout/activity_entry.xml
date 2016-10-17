@@ -8,7 +8,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="@mipmap/entrybg"
-    tools:context="com.jfb.happyshopping.Entry">
+    tools:context="com.jfb.happyshopping.activites.Entry">
 
     <TextView
         android:layout_width="wrap_content"
