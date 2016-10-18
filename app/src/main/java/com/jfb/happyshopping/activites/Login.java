@@ -75,7 +75,6 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                     i.putExtra("email", email);
                     i.putExtra("photoUrl", photoUrl);
                     i.putExtra("Uid", user.getUid());
-//                    i.putExtra("tokeUid", AccessToken.getCurrentAccessToken().getUserId());
                     startActivity(i);
                     Log.d("Boholst", "onAuthStateChanged:signed_in:" + user.getUid());
                 } else {
@@ -177,83 +176,6 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         }
     }
 
-//    private void ambotUnsaNi(String userID, AccessToken token) {
-//        new GraphRequest(
-//                AccessToken.getCurrentAccessToken(),
-//                "/" + userID+"/friends?fields=installed,id,name",
-//                null,
-//                HttpMethod.GET,
-//                new GraphRequest.Callback() {
-//                    public void onCompleted(GraphResponse response) {
-//                        Log.d("Boholst", response.getJSONObject().toString());
-//                        try {
-//                            jsonArray = response.getJSONObject().getJSONArray("data");
-//                            for (int x = 0; x < jsonArray.length(); x++) {
-//                                Log.d("Boholst", jsonArray.get(x).toString());
-//                            }
-//                        } catch (JSONException e) {
-//                            e.printStackTrace();
-//                        }
-//                        Log.d("Boholst", "paeta bai");
-//                    }
-//                }
-//        ).executeAsync();
-//    }
-
-    //    private void setFacebookData(final LoginResult loginResult) {
-//        GraphRequest request = GraphRequest.newMeRequest(
-//                loginResult.getAccessToken(),
-//                new GraphRequest.GraphJSONObjectCallback() {
-//                    @Override
-//                    public void onCompleted(JSONObject object, GraphResponse response) {
-//                        // Application code
-//                        try {
-//                            Log.i("Response", response.toString());
-//
-//                            String email = response.getJSONObject().getString("email");
-//                            String firstName = response.getJSONObject().getString("first_name");
-//                            String lastName = response.getJSONObject().getString("last_name");
-//                            String location = response.getJSONObject().getString("location");
-//                            Log.i("Login" + "Email", email);
-//                            Log.i("Login" + "FirstName", firstName);
-//                            Log.i("Login" + "LastName", lastName);
-//                            Log.i("Login" + "Address", location);
-//                            Intent i = new Intent(Login.this, Login.class);
-//                            i.putExtra("first_name", firstName);
-//                            i.putExtra("last_name", lastName);
-//                            i.putExtra("email", email);
-//                            i.putExtra("location", location);
-//                            startActivity(i);
-//                        } catch (JSONException e) {
-//                            e.printStackTrace();
-//                        }
-//                    }
-//                });
-//        Bundle parameters = new Bundle();
-//        parameters.putString("fields", "email,first_name,last_name,gender, birthday,location");
-//        request.setParameters(parameters);
-//        request.executeAsync();
-//    }
-//
-//
-//    public void getKeyHash() {
-//        // Add code to print out the key hash
-//        try {
-//            PackageInfo info = getPackageManager().getPackageInfo(
-//                    "com.jfb.happyshopping",
-//                    PackageManager.GET_SIGNATURES);
-//            for (Signature signature : info.signatures) {
-//                MessageDigest md = MessageDigest.getInstance("SHA");
-//                md.update(signature.toByteArray());
-//                Log.d("KeyHash:", Base64.encodeToString(md.digest(), Base64.DEFAULT));
-//            }
-//        } catch (PackageManager.NameNotFoundException e) {
-//
-//        } catch (NoSuchAlgorithmException e) {
-//
-//        }
-//
-//    }
 
 }
 

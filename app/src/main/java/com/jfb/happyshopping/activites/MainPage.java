@@ -28,7 +28,7 @@ import com.jfb.happyshopping.fragments.MyShoppingList;
 import com.jfb.happyshopping.fragments.SharedShoppingList;
 
 public class MainPage extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, SharedShoppingList.OnItemClick {
 
     FragmentManager fm;
     String emailAdd;
@@ -63,7 +63,7 @@ public class MainPage extends AppCompatActivity
         emailAdd = i.getStringExtra("email");
         email.setText(emailAdd);
         ImageView photo = (ImageView) navigationView.getHeaderView(0).findViewById(R.id.imageView);
-        tokenId = i.getStringExtra("tokenUid");
+        tokenId = AccessToken.getCurrentAccessToken().getUserId();
 
         DatabaseReference mUsers = mRootDb.child("Users");
         uid = i.getStringExtra("Uid");
@@ -76,7 +76,6 @@ public class MainPage extends AppCompatActivity
         Glide.with(getApplicationContext()).load(i.getStringExtra("photoUrl")).into(photo);
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setCheckedItem(R.id.nav_categories);
-        Log.d("Boholst", String.valueOf(navigationView.getMenu().getItem(0).getItemId()));
         this.onNavigationItemSelected(navigationView.getMenu().getItem(0));
 
     }
@@ -116,14 +115,15 @@ public class MainPage extends AppCompatActivity
         Fragment fragment = null;
 
         if (id == R.id.nav_categories) {
-            Log.d("Boholst", String.valueOf(id));
             toolbar.setTitle("My Shopping List");
             fragment = new MyShoppingList();
             Bundle bundle = new Bundle();
-            bundle.putString("Uid", uid);
+            bundle.putString("tokenUId", tokenId);
             fragment.setArguments(bundle);
         } else if (id == R.id.nav_shoppinglist) {
-            fragment = new SharedShoppingList();
+            SharedShoppingList sharedShoppingList = new SharedShoppingList();
+            sharedShoppingList.setOnItemClick(this);
+            fragment = sharedShoppingList;
             toolbar.setTitle("Shared To Me");
             Bundle bundle = new Bundle();
             bundle.putString("Uid", uid);
@@ -162,5 +162,15 @@ public class MainPage extends AppCompatActivity
         return true;
     }
 
+    @Override
+    public void onItemClick(String id, String name) {
+        toolbar.setTitle(name);
+        Fragment fragment = new MyShoppingList();
+        Bundle bundle = new Bundle();
+        bundle.putString("tokenUId", id);
+        fragment.setArguments(bundle);
+        fm.beginTransaction()
+                .replace(R.id.content_fragment, fragment).commit();
+    }
 }
 

@@ -14,7 +14,6 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ListView;
 
-import com.facebook.AccessToken;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -36,6 +35,7 @@ public class MyShoppingList extends Fragment implements AdapterView.OnItemClickL
     ItemAdapter mAdapter;
     Context mContext;
     Bundle bundle;
+    String tokenId;
 
     public MyShoppingList() {
     }
@@ -52,9 +52,11 @@ public class MyShoppingList extends Fragment implements AdapterView.OnItemClickL
         listView.setDescendantFocusability(ListView.FOCUS_BLOCK_DESCENDANTS);
         listView.setOnItemClickListener(this);
         bundle = getArguments();
+        tokenId = bundle.getString("tokenUId");
+
 
         mRootDb = FirebaseDatabase.getInstance().getReference();
-        mItem = mRootDb.child("ShoppingList").child(AccessToken.getCurrentAccessToken().getUserId()).child("product");
+        mItem = mRootDb.child("ShoppingList").child(tokenId).child("product");
 
         FloatingActionButton fab = (FloatingActionButton) view.findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {

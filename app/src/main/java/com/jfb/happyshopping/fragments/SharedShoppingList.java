@@ -3,7 +3,6 @@ package com.jfb.happyshopping.fragments;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +21,16 @@ import java.util.ArrayList;
 
 public class SharedShoppingList
         extends Fragment implements AdapterView.OnItemClickListener {
+
+    public interface OnItemClick {
+        void onItemClick(String id, String name);
+    }
+
+    OnItemClick onItemClick;
+
+    public void setOnItemClick(OnItemClick onItemClick) {
+        this.onItemClick = onItemClick;
+    }
 
     DatabaseReference mRootDb;
     DatabaseReference mFriendsShopping;
@@ -78,7 +87,6 @@ public class SharedShoppingList
         public void onChildRemoved(DataSnapshot dataSnapshot) {
             String KeyRemoved = dataSnapshot.getKey();
             int IndexRemoved = mItemKeys.indexOf(KeyRemoved);
-            Log.d("chan", String.valueOf(IndexRemoved));
             mItemKeys.remove(KeyRemoved);
             mAdapter.remove(IndexRemoved);
 
@@ -98,5 +106,6 @@ public class SharedShoppingList
 
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        onItemClick.onItemClick(mItemKeys.get(i), mList.get(i));
     }
 }
