@@ -76,35 +76,27 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                     i.putExtra("photoUrl", photoUrl);
                     i.putExtra("Uid", user.getUid());
                     startActivity(i);
-                    Log.d("Boholst", "onAuthStateChanged:signed_in:" + user.getUid());
                 } else {
                     authStat = false;
-                    Log.d("Boholst", "onAuthStateChanged:signed_out");
                 }
             }
         };
 
         mCallbackManager = CallbackManager.Factory.create();
         loginButton = (LoginButton) findViewById(R.id.login_button);
-
-//        loginButton.setReadPermissions("email", "public_profile", "user_location", "user_friends");
         loginButton.setOnClickListener(this);
 
     }
 
-    private void handleFacebookAccessToken(final AccessToken token) {
+    private void handleFacebookAccessToken(AccessToken token) {
         final String userID = token.getUserId();
-        Log.d("Boholst", "handleFacebookAccessToken:" + token.getToken());
         AuthCredential credential = FacebookAuthProvider.getCredential(token.getToken());
         mAuth.signInWithCredential(credential)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        Log.d("Boholst", "signInWithCredential:onComplete:" + task.isSuccessful());
-//                        ambotUnsaNi(userID, token.getCurrentAccessToken());
 
                         if (!task.isSuccessful()) {
-                            Log.w("Boholst", "signInWithCredential", task.getException());
                         }
                     }
                 });
